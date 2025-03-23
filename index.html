@@ -45,6 +45,31 @@
         #toggleCheckbox:not(:checked)~.toggle-label::after {
             content: " Ver más...";
         }
+        /* Ocultar elementos desde el tercero */
+        #myList2 li:nth-child(n+4) {
+            display: none;
+        }
+
+        /* Mostrar elementos cuando el checkbox está marcado */
+        #toggleCheckbox2:checked~ul#myList li {
+            display: list-item;
+        }
+
+        
+
+        /* Ocultar el checkbox */
+        #toggleCheckbox2 {
+            display: none;
+        }
+
+        /* Cambiar el texto del botón cuando está marcado */
+        #toggleCheckbox2:checked~.toggle-label::after {
+            content: " Ver menos";
+        }
+
+        #toggleCheckbox2:not(:checked)~.toggle-label::after {
+            content: " Ver más...";
+        }
     </style>
 </head>
 
@@ -143,12 +168,11 @@
 
                     <div class="card mb-3 border-0 shadow-sm">
                         <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en
-                                Sistemas</h4>
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en Sistemas</h4>
                             <h6 class="text-prymary"> 2021 actualidad</h6>
                             <h5 class="text-primary"> Trabajo Actual: Hospital San José de Aguadas</h5>
-                            <input type="checkbox" id="toggleCheckbox">
-                            <ul id="myList">
+                            <input type="checkbox" id="toggleCheckbox2">
+                            <ul id="myList2">
                                 <li>Liderazgo de equipo de desarrollo</li>
                                 <li>Implementación de arquitectura SAS</li>
                                 <li>Optimización de rendimiento</li>
@@ -163,7 +187,7 @@
                                 <li>Optimización de rendimiento</li>
                             </ul>
 
-                            <label for="toggleCheckbox" class="toggle-label"></label>
+                            <label for="toggleCheckbox2" class="toggle-label"></label>
 
                         </div>
                     </div>
