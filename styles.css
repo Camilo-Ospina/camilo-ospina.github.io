@@ -1,0 +1,37 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ajustes de color para columna izquierda */
+.bg-prymary {
+    background-color: #0f2838 !important;
+}
+
+/* Progreso personalizado */
+.progress {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.text-primary {
+    color: #3498db !important;
+}
+/* efectos para las tarjetas */
+.card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition-duration: 500ms;
+    transition-property: background-color, color;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: #0f2838;
+    color: #fff
+}
+.linkwhats:hover{
+    color:greenyellow !important;
+}
+a:hover{
+    color:#3498db !important;
+}

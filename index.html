@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOJA DE VIDA - CAMILO</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Ocultar elementos desde el tercero */
+        #myList li:nth-child(n+4) {
+            display: none;
+        }
+
+        /* Mostrar elementos cuando el checkbox está marcado */
+        #toggleCheckbox:checked~ul#myList li {
+            display: list-item;
+        }
+
+        /* Estilo para el botón "Ver más" */
+        .toggle-label {
+            cursor: pointer;
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+
+        /* Ocultar el checkbox */
+        #toggleCheckbox {
+            display: none;
+        }
+
+        /* Cambiar el texto del botón cuando está marcado */
+        #toggleCheckbox:checked~.toggle-label::after {
+            content: " Ver menos";
+        }
+
+        #toggleCheckbox:not(:checked)~.toggle-label::after {
+            content: " Ver más...";
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-lg my-5">
+
+        <div class="row shadow-lg rounded-4 overflow-hidden">
+            <!-- columna izquierda -->
+            <div class="col-md-4 bg-prymary text-white p-4">
+                <header class="text-center mb-4">
+
+                    <img src="img/IMG_84119.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3"
+                        alt="Foto de perfil">
+                    <h1 class="fw-bold mb-1">JUAN CARDONA</h1>
+                    <h2 class="h5 text-light">Desarrollador Web</h2>
+                </header>
+                <section class="mb-4">
+                    <h5 class="fw-bold"> <i class="fa-solid fa-address-card mb-4"></i> Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a class="linkwhats text-white"
+                                href="https://wa.me/573135923282?text=Hola! Estoy interesado en tus servicios. "
+                                target="_blank" style="text-decoration: none;"> <i class="fa-brands fa-whatsapp"></i>
+                                +57 313 5923282</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa-solid fa-envelope"></i> camilow1881@gmail.com
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa-solid fa-location-dot"></i> Aguadas, Caldas (Colombia)
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white" href="//www.github.com/Camilo-Ospina" target="_blank"
+                                style="text-decoration: none;"><i class="fa-brands fa-github"></i> Camilo-Ospina</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white" href="https://www.facebook.com/Camilospina20" target="_blank"
+                                style="text-decoration: none;"><i class="fa-brands fa-facebook"></i> Juan Cardona</a>
+                        </li>
+                        <li class="mb-2">
+                            <a class="text-white" href="https://www.instagram.com/juannortside" target="_blank"
+                                style="text-decoration: none;"><i class="fa-brands fa-instagram"></i> Juan Nortside</a>
+                        </li>
+                    </ul>
+
+                </section>
+
+                <section class="mb-4">
+                    <h3 class="h5 fw-bold mb-3"><i class="fa-solid fa-brain"></i> Habilidades</h3>
+                    <div class="skill mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML/CSS</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <!-- Repetir para otras habilidades -->
+
+                </section>
+
+            </div>
+            <!-- columna derecha -->
+            <div class="col-md-8 bg-light p-4">
+                <section class="mb-5">
+                    <h4 class="fw-bold text-primary mb-4">
+                        <i class="fas fa-briefcase me-1"></i> Experiencia Laboral
+                    </h4>
+
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-palette"></i> Diseño Digital en Photoshop</h4>
+                            <h6 class="text-prymary"> 2018 actualidad</h6>
+                            <h5 class="text-primary"> Trabajo Actual: Hospital San José de Aguadas y Alcaldía Municipal de Aguadas</h5>
+                            <input type="checkbox" id="toggleCheckbox">
+                            <ul id="myList">
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                            </ul>
+
+                            <label for="toggleCheckbox" class="toggle-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en
+                                Sistemas</h4>
+                            <h6 class="text-prymary"> 2021 actualidad</h6>
+                            <h5 class="text-primary"> Trabajo Actual: Hospital San José de Aguadas</h5>
+                            <input type="checkbox" id="toggleCheckbox">
+                            <ul id="myList">
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                            </ul>
+
+                            <label for="toggleCheckbox" class="toggle-label"></label>
+
+                        </div>
+                    </div>
+
+                </section>
+                <section class="mb-5">
+                    <h4 class="fw-bold text-primary mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i> Educación
+                    </h4>
+
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-computer"></i> Especialidad en Informática</h4>
+                            <h6 class="text-prymary"> Bachiller en el año 2016</h6>
+                            <li class="mb-2">
+                                <a class="text-prymary" href="http://www.ie-robertopelaez-sed-cad.ie.edu.co/" target="_blank"
+                                    style="text-decoration: none;"><i class="fa-solid fa-school"></i> I.E. Roberto Peláez</a>
+                            </li>
+                            <input type="checkbox" id="toggleCheckbox">
+                            <ul id="myList">
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                            </ul>
+
+                            <label for="toggleCheckbox" class="toggle-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-code"></i> Técnico en Programación de Software</h4>
+                            <h6 class="text-prymary"> Títulación en el año 2016</h6>
+                            <h5 class="text-primary"><i class="fa-solid fa-school"></i> SENA Regional Caldas</h5>
+                            <input type="checkbox" id="toggleCheckbox">
+                            <ul id="myList">
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                            </ul>
+
+                            <label for="toggleCheckbox" class="toggle-label"></label>
+
+                        </div>
+                    </div>
+                    <div class="card mb-3 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en Sistemas</h4>
+                            <h6 class="text-prymary"> Títulación en el año 2021</h6>
+                            <h5 class="text-primary"><i class="fa-solid fa-school"></i> SENA Regional Caldas</h5>
+                            <input type="checkbox" id="toggleCheckbox">
+                            <ul id="myList">
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                                <li>Liderazgo de equipo de desarrollo</li>
+                                <li>Implementación de arquitectura SAS</li>
+                                <li>Optimización de rendimiento</li>
+                            </ul>
+
+                            <label for="toggleCheckbox" class="toggle-label"></label>
+
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <p>MI HOJA DE VIDA</p>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
