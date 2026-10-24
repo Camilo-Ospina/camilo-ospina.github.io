@@ -1,287 +1,557 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOJA DE VIDA - CAMILO</title>
-    <!-- Bootstrap 5 -->
+    <meta name="description"
+        content="Hoja de vida profesional de Juan Camilo Cardona Ospina - Desarrollador Web Junior, Técnico en Programación de Software y Sistemas (SENA).">
+    <meta name="author" content="Juan Camilo Cardona Ospina">
+    <meta name="theme-color" content="#0f2838">
+    <title>Juan Camilo Cardona Ospina | Hoja de Vida - Desarrollador Web Junior</title>
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Ocultar elementos desde el tercero */
-        #myList li:nth-child(n+4) {
-            display: none;
-        }
-
-        /* Mostrar elementos cuando el checkbox está marcado */
-        #toggleCheckbox:checked~ul#myList li {
-            display: list-item;
-        }
-
-        /* Estilo para el botón "Ver más" */
-        .toggle-label {
-            cursor: pointer;
-            color: #0d6efd;
-            text-decoration: underline;
-        }
-
-        /* Ocultar el checkbox */
-        #toggleCheckbox {
-            display: none;
-        }
-
-        /* Cambiar el texto del botón cuando está marcado */
-        #toggleCheckbox:checked~.toggle-label::after {
-            content: " Ver menos";
-        }
-
-        #toggleCheckbox:not(:checked)~.toggle-label::after {
-            content: " Ver más...";
-        }
-        /* Ocultar elementos desde el tercero */
-        #myList2 li:nth-child(n+4) {
-            display: none;
-        }
-
-        /* Mostrar elementos cuando el checkbox está marcado */
-        #toggleCheckbox2:checked~ul#myList li {
-            display: list-item;
-        }
-
-        
-
-        /* Ocultar el checkbox */
-        #toggleCheckbox2 {
-            display: none;
-        }
-
-        /* Cambiar el texto del botón cuando está marcado */
-        #toggleCheckbox2:checked~.toggle-label::after {
-            content: " Ver menos";
-        }
-
-        #toggleCheckbox2:not(:checked)~.toggle-label::after {
-            content: " Ver más...";
-        }
-    </style>
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div class="container-lg my-5">
+    <!-- ====================================================================
+         BARRA SUPERIOR DE ACCIONES (Descargar PDF, WhatsApp, Modo Oscuro)
+         ==================================================================== -->
+    <aside class="top-action-bar no-print" aria-label="Acciones rápidas de la hoja de vida">
+        <div class="status-pill">
+            <span class="status-indicator-dot" aria-hidden="true"></span>
+            <span>Disponible para roles como Desarrollador Web Junior / Frontend</span>
+        </div>
 
-        <div class="row shadow-lg rounded-4 overflow-hidden">
-            <!-- columna izquierda -->
-            <div class="col-md-4 bg-prymary text-white p-4">
-                <header class="text-center mb-4">
+        <div class="actions-group">
+            <button type="button" class="btn-custom" data-action="print" title="Imprimir o guardar como documento PDF">
+                <i class="fa-solid fa-print text-primary" aria-hidden="true"></i>
+                <span>Imprimir / Guardar PDF</span>
+            </button>
 
-                    <img src="img/IMG_84119.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3"
-                        alt="Foto de perfil">
-                    <h1 class="fw-bold mb-1">JUAN CARDONA</h1>
-                    <h2 class="h5 text-light">Desarrollador Web</h2>
-                </header>
-                <section class="mb-4">
-                    <h5 class="fw-bold"> <i class="fa-solid fa-address-card mb-4"></i> Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <a class="linkwhats text-white"
-                                href="https://wa.me/573135923282?text=Hola! Estoy interesado en tus servicios. "
-                                target="_blank" style="text-decoration: none;"> <i class="fa-brands fa-whatsapp"></i>
-                                +57 313 5923282</a>
-                        </li>
-                        <li class="mb-2">
-                            <i class="fa-solid fa-envelope"></i> camilow1881@gmail.com
-                        </li>
-                        <li class="mb-2">
-                            <i class="fa-solid fa-location-dot"></i> Aguadas, Caldas (Colombia)
-                        </li>
-                        <li class="mb-2">
-                            <a class="text-white" href="//www.github.com/Camilo-Ospina" target="_blank"
-                                style="text-decoration: none;"><i class="fa-brands fa-github"></i> Camilo-Ospina</a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="text-white" href="https://www.facebook.com/Camilospina20" target="_blank"
-                                style="text-decoration: none;"><i class="fa-brands fa-facebook"></i> Juan Cardona</a>
-                        </li>
-                        <li class="mb-2">
-                            <a class="text-white" href="https://www.instagram.com/juannortside" target="_blank"
-                                style="text-decoration: none;"><i class="fa-brands fa-instagram"></i> Juan Nortside</a>
-                        </li>
-                    </ul>
+            <a class="btn-custom btn-custom-whatsapp"
+                href="https://wa.me/573135923282?text=Hola%20Juan%20Camilo,%20vi%20tu%20hoja%20de%20vida%20y%20me%20gustar%C3%ADa%20conversar."
+                target="_blank" rel="noopener noreferrer" title="Contactar directamente por WhatsApp">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp</span>
+            </a>
 
-                </section>
+            <button type="button" id="themeToggleBtn" class="btn-custom theme-toggle-btn"
+                title="Cambiar entre modo claro y oscuro" aria-label="Cambiar tema claro / oscuro">
+                <i id="themeIcon" class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+        </div>
+    </aside>
 
-                <section class="mb-4">
-                    <h3 class="h5 fw-bold mb-3"><i class="fa-solid fa-brain"></i> Habilidades</h3>
-                    <div class="skill mb-3">
-                        <div class="d-flex justify-content-between">
-                            <span>HTML/CSS</span>
-                            <span>35%</span>
+    <!-- ====================================================================
+         CONTENEDOR PRINCIPAL DEL CURRÍCULUM
+         ==================================================================== -->
+    <main class="cv-container">
+        <div class="cv-card-frame">
+            <div class="row g-0">
+
+                <!-- --------------------------------------------------------
+                     COLUMNA IZQUIERDA: PERFIL, CONTACTO Y HABILIDADES (Sidebar)
+                     -------------------------------------------------------- -->
+                <aside class="col-lg-4 col-md-5 cv-sidebar">
+                    <!-- Cabecera de Identidad -->
+                    <div class="text-center">
+                        <div class="profile-avatar-wrap">
+                            <img src="img/IMG_84119.jpg" class="profile-avatar"
+                                alt="Fotografía de Juan Camilo Cardona Ospina" width="156" height="156"
+                                loading="eager">
                         </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 35%"></div>
-                        </div>
-                    </div>
-                    <!-- Repetir para otras habilidades -->
-
-                </section>
-
-            </div>
-            <!-- columna derecha -->
-            <div class="col-md-8 bg-light p-4">
-                <section class="mb-5">
-                    <h4 class="fw-bold text-primary mb-4">
-                        <i class="fas fa-briefcase me-1"></i> Experiencia Laboral
-                    </h4>
-
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-palette"></i> Diseño Digital en Photoshop</h4>
-                            <h6 class="text-prymary"> 2018 actualidad</h6>
-                            <h5 class="text-primary"> Trabajo Actual: Hospital San José de Aguadas y Alcaldía Municipal de Aguadas</h5>
-                            <input type="checkbox" id="toggleCheckbox">
-                            <ul id="myList">
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                            </ul>
-
-                            <label for="toggleCheckbox" class="toggle-label"></label>
-                        </div>
+                        <h1 class="sidebar-title-name">JUAN CAMILO CARDONA</h1>
+                        <span class="sidebar-role-badge"><i class="fa-solid fa-code me-1" aria-hidden="true"></i> Desarrollador Web Junior</span>
+                        <p class="sidebar-bio-text">
+                            Técnico en Programación de Software y Sistemas (SENA). Enfocado en desarrollo frontend con
+                            HTML5, CSS3, JavaScript y Bootstrap, complementado con sólida experiencia en soporte TI y diseño digital.
+                        </p>
                     </div>
 
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en Sistemas</h4>
-                            <h6 class="text-prymary"> 2021 actualidad</h6>
-                            <h5 class="text-primary"> Trabajo Actual: Hospital San José de Aguadas</h5>
-                            <input type="checkbox" id="toggleCheckbox2">
-                            <ul id="myList2">
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                            </ul>
+                    <div class="sidebar-section-divider"></div>
 
-                            <label for="toggleCheckbox2" class="toggle-label"></label>
-
-                        </div>
-                    </div>
-
-                </section>
-                <section class="mb-5">
-                    <h4 class="fw-bold text-primary mb-4">
-                        <i class="fa-solid fa-graduation-cap"></i> Educación
-                    </h4>
-
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-computer"></i> Especialidad en Informática</h4>
-                            <h6 class="text-prymary"> Bachiller en el año 2016</h6>
-                            <li class="mb-2">
-                                <a class="text-prymary" href="http://www.ie-robertopelaez-sed-cad.ie.edu.co/" target="_blank"
-                                    style="text-decoration: none;"><i class="fa-solid fa-school"></i> I.E. Roberto Peláez</a>
+                    <!-- Datos de Contacto -->
+                    <section class="sidebar-section mb-4" aria-labelledby="contact-heading">
+                        <h2 id="contact-heading" class="sidebar-section-heading">
+                            <i class="fa-solid fa-address-book" aria-hidden="true"></i> Contacto
+                        </h2>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <a class="contact-link whatsapp-link"
+                                    href="https://wa.me/573135923282?text=Hola%20Juan%20Camilo,%20vi%20tu%20hoja%20de%20vida."
+                                    target="_blank" rel="noopener noreferrer">
+                                    +57 313 5923282
+                                </a>
+                                <button type="button" class="copy-mini-btn no-print" data-copy="+573135923282"
+                                    data-label="Teléfono" title="Copiar teléfono" aria-label="Copiar número de teléfono">
+                                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                                </button>
                             </li>
-                            <input type="checkbox" id="toggleCheckbox">
-                            <ul id="myList">
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <a class="contact-link" href="mailto:camilow1881@gmail.com">
+                                    camilow1881@gmail.com
+                                </a>
+                                <button type="button" class="copy-mini-btn no-print" data-copy="camilow1881@gmail.com"
+                                    data-label="Correo" title="Copiar correo" aria-label="Copiar correo electrónico">
+                                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                                </button>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <span class="contact-link">Aguadas, Caldas (Colombia)</span>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <a class="contact-link" href="https://github.com/Camilo-Ospina" target="_blank"
+                                    rel="noopener noreferrer">
+                                    github.com/Camilo-Ospina
+                                </a>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                                <a class="contact-link" href="https://www.facebook.com/Camilospina20" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Juan Cardona
+                                </a>
+                            </li>
+
+                            <li class="contact-item">
+                                <div class="contact-icon-box" aria-hidden="true">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <a class="contact-link" href="https://www.instagram.com/juannortside" target="_blank"
+                                    rel="noopener noreferrer">
+                                    @juannortside
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <div class="sidebar-section-divider"></div>
+
+                    <!-- Habilidades Técnicas Principales (Sin porcentajes) -->
+                    <section class="sidebar-section mb-4" aria-labelledby="skills-heading">
+                        <h2 id="skills-heading" class="sidebar-section-heading">
+                            <i class="fa-solid fa-code" aria-hidden="true"></i> Stack & Habilidades
+                        </h2>
+
+                        <!-- Grupo 1: Desarrollo Web Frontend -->
+                        <div class="skills-category-group">
+                            <h3 class="skills-category-title">
+                                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Desarrollo Frontend
+                            </h3>
+                            <div class="skills-tags-wrap">
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-html5 text-danger" aria-hidden="true"></i> HTML5 Semántico</span>
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-css3-alt text-primary" aria-hidden="true"></i> CSS3 / Flex / Grid</span>
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-js text-warning" aria-hidden="true"></i> JavaScript (ES6+)</span>
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-bootstrap" style="color: #c084fc;" aria-hidden="true"></i> Bootstrap 5</span>
+                                <span class="skill-tag-pill">Responsive Design</span>
+                                <span class="skill-tag-pill">Consumo de APIs REST</span>
+                            </div>
+                        </div>
+
+                        <!-- Grupo 2: Herramientas & Control de Versiones -->
+                        <div class="skills-category-group">
+                            <h3 class="skills-category-title">
+                                <i class="fa-solid fa-code-branch" aria-hidden="true"></i> Herramientas & Git
+                            </h3>
+                            <div class="skills-tags-wrap">
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-git-alt text-danger" aria-hidden="true"></i> Git</span>
+                                <span class="skill-tag-pill featured-tech"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</span>
+                                <span class="skill-tag-pill">VS Code</span>
+                                <span class="skill-tag-pill">DevTools / Depuración</span>
+                                <span class="skill-tag-pill">npm Básico</span>
+                            </div>
+                        </div>
+
+                        <!-- Grupo 3: Sistemas & Soporte TI -->
+                        <div class="skills-category-group">
+                            <h3 class="skills-category-title">
+                                <i class="fa-solid fa-server" aria-hidden="true"></i> Sistemas & Soporte TI
+                            </h3>
+                            <div class="skills-tags-wrap">
+                                <span class="skill-tag-pill">Soporte a Usuarios</span>
+                                <span class="skill-tag-pill">Mantenimiento HW/SW</span>
+                                <span class="skill-tag-pill">Redes LAN / Switches</span>
+                                <span class="skill-tag-pill">Software Hospitalario</span>
+                                <span class="skill-tag-pill">Copias de Seguridad</span>
+                                <span class="skill-tag-pill">Windows / Linux Básico</span>
+                            </div>
+                        </div>
+
+                        <!-- Grupo 4: Diseño Digital & Multimedia -->
+                        <div class="skills-category-group">
+                            <h3 class="skills-category-title">
+                                <i class="fa-solid fa-palette" aria-hidden="true"></i> Diseño & Multimedia
+                            </h3>
+                            <div class="skills-tags-wrap">
+                                <span class="skill-tag-pill featured-tech">Adobe Photoshop</span>
+                                <span class="skill-tag-pill">Retoque Digital</span>
+                                <span class="skill-tag-pill">Identidad Institucional</span>
+                                <span class="skill-tag-pill">Diseño Publicitario</span>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                    <div class="sidebar-section-divider"></div>
+
+                    <!-- Habilidades Blandas -->
+                    <section class="sidebar-section mb-4" aria-labelledby="softskills-heading">
+                        <h2 id="softskills-heading" class="sidebar-section-heading">
+                            <i class="fa-solid fa-people-group" aria-hidden="true"></i> Habilidades Blandas
+                        </h2>
+                        <div class="badges-cloud">
+                            <span class="badge-tag-sidebar">Resolución de Problemas</span>
+                            <span class="badge-tag-sidebar">Trabajo en Equipo</span>
+                            <span class="badge-tag-sidebar">Atención al Detalle</span>
+                            <span class="badge-tag-sidebar">Comunicación Asertiva</span>
+                            <span class="badge-tag-sidebar">Proactividad</span>
+                            <span class="badge-tag-sidebar">Aprendizaje Continuo</span>
+                        </div>
+                    </section>
+
+                    <div class="sidebar-section-divider"></div>
+
+                    <!-- Idiomas -->
+                    <section class="sidebar-section" aria-labelledby="languages-heading">
+                        <h2 id="languages-heading" class="sidebar-section-heading">
+                            <i class="fa-solid fa-language" aria-hidden="true"></i> Idiomas
+                        </h2>
+                        <div class="d-flex justify-content-between mb-2 small text-light">
+                            <span>Español:</span>
+                            <strong class="text-white">Nativo</strong>
+                        </div>
+                        <div class="d-flex justify-content-between small text-light">
+                            <span>Inglés:</span>
+                            <strong class="text-white">Técnico / Lectura</strong>
+                        </div>
+                    </section>
+                </aside>
+
+                <!-- --------------------------------------------------------
+                     COLUMNA DERECHA: EXPERIENCIA, EDUCACIÓN Y PROYECTOS
+                     -------------------------------------------------------- -->
+                <section class="col-lg-8 col-md-7 cv-main-body">
+
+                    <!-- Resumen / Perfil Profesional -->
+                    <section class="mb-5" aria-labelledby="profile-heading">
+                        <h2 id="profile-heading" class="section-main-heading">
+                            <span class="section-icon-badge" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
+                            Perfil Profesional
+                        </h2>
+                        <p class="lead fs-6 text-secondary" style="line-height: 1.7;">
+                            <strong>Desarrollador Web Junior</strong> y Técnico con doble titulación del <strong>SENA</strong> en 
+                            <em>Programación de Software</em> y <em>Sistemas</em>. Cuento con una base técnica sólida en desarrollo frontend: 
+                            <strong>HTML5 semántico, CSS3 moderno (Flexbox/Grid), JavaScript (ES6+), maquetación responsiva con Bootstrap 5</strong> 
+                            y control de versiones con <strong>Git & GitHub</strong>.
+                        </p>
+                        <p class="text-secondary mb-0" style="line-height: 1.7;">
+                            Complemento mi perfil con más de 5 años de trayectoria práctica en soporte de infraestructura TI institucional y 
+                            gestión de software en el <strong>Hospital San José de Aguadas</strong>, además de diseño multimedia para la 
+                            <strong>Alcaldía Municipal de Aguadas</strong>. Esta experiencia me ha otorgado disciplina metódica para la depuración 
+                            y resolución de fallas, comunicación asertiva y una comprensión real de las necesidades del usuario final. 
+                            Busco integrarme a un equipo ágil de desarrollo donde pueda aportar compromiso, continuar acelerando mi aprendizaje 
+                            junto a desarrolladores senior y construir interfaces web modernas y de alto rendimiento.
+                        </p>
+                    </section>
+
+                    <!-- Experiencia Laboral -->
+                    <section class="mb-5" aria-labelledby="experience-heading">
+                        <h2 id="experience-heading" class="section-main-heading">
+                            <span class="section-icon-badge" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+                            Experiencia Laboral
+                        </h2>
+
+                        <!-- Cargo 1: Técnico en Sistemas -->
+                        <article class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-role-title">
+                                    <i class="fa-solid fa-screwdriver-wrench text-primary" aria-hidden="true"></i>
+                                    Técnico en Sistemas
+                                </h3>
+                                <span class="timeline-date-badge">
+                                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> 2021 – Presente
+                                </span>
+                            </div>
+                            <div class="timeline-company-title">
+                                <i class="fa-solid fa-hospital" aria-hidden="true"></i>
+                                <span>Hospital San José de Aguadas (Caldas)</span>
+                            </div>
+                            <ul class="achievement-list">
+                                <li>Mantenimiento preventivo y correctivo a más de 50 estaciones de trabajo, impresoras médicas, servidores locales y periféricos institucionales.</li>
+                                <li>Administración, supervisión y soporte técnico del software de historia clínica y sistemas de información en salud, asegurando disponibilidad 24/7.</li>
+                                <li>Monitoreo y administración de red LAN, routers, switches, direccionamiento IP y protocolos de seguridad informática básica.</li>
+                                <li>Ejecución de respaldos periódicos (backups) de información crítica y restauración de contingencia ante fallos.</li>
                             </ul>
 
-                            <label for="toggleCheckbox" class="toggle-label"></label>
-                        </div>
-                    </div>
+                            <!-- Detalles expandibles accesibles según guía moderna -->
+                            <details class="cv-disclosure">
+                                <summary class="cv-summary">Ver más funciones técnicas y responsabilidades</summary>
+                                <div class="disclosure-content">
+                                    <ul class="achievement-list mb-0">
+                                        <li>Atención y resolución oportuna de tickets de soporte técnico a personal asistencial, médico y administrativo.</li>
+                                        <li>Instalación, configuración y actualización de sistemas operativos Windows, suites ofimáticas y software especializado.</li>
+                                        <li>Capacitación y orientación a usuarios en buenas prácticas de uso seguro de tecnologías institucionales.</li>
+                                    </ul>
+                                </div>
+                            </details>
 
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-code"></i> Técnico en Programación de Software</h4>
-                            <h6 class="text-prymary"> Títulación en el año 2016</h6>
-                            <h5 class="text-primary"><i class="fa-solid fa-school"></i> SENA Regional Caldas</h5>
-                            <input type="checkbox" id="toggleCheckbox">
-                            <ul id="myList">
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
+                            <div class="tech-pills-wrap">
+                                <span class="tech-pill">Soporte TI</span>
+                                <span class="tech-pill">Redes LAN</span>
+                                <span class="tech-pill">Mantenimiento HW/SW</span>
+                                <span class="tech-pill">Sistemas Hospitalarios</span>
+                                <span class="tech-pill">Seguridad & Backups</span>
+                            </div>
+                        </article>
+
+                        <!-- Cargo 2: Diseño Digital en Photoshop -->
+                        <article class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-role-title">
+                                    <i class="fa-solid fa-palette text-primary" aria-hidden="true"></i>
+                                    Diseño Digital en Photoshop & Contenido Visual
+                                </h3>
+                                <span class="timeline-date-badge">
+                                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> 2018 – Presente
+                                </span>
+                            </div>
+                            <div class="timeline-company-title">
+                                <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+                                <span>Hospital San José de Aguadas & Alcaldía Municipal de Aguadas</span>
+                            </div>
+                            <ul class="achievement-list">
+                                <li>Conceptualización y creación de piezas publicitarias, campañas de salud preventiva y comunicados oficiales para medios digitales e impresos.</li>
+                                <li>Edición, retoque fotográfico avanzado y estandarización de la línea gráfica institucional en redes sociales y portales web.</li>
+                                <li>Elaboración de carteleras informativas, infografías de salud pública, manuales visuales y señalética interna.</li>
+                                <li>Coordinación de requerimientos de diseño con dependencias municipales y adecuación de artes para imprenta de gran formato.</li>
                             </ul>
 
-                            <label for="toggleCheckbox" class="toggle-label"></label>
+                            <details class="cv-disclosure">
+                                <summary class="cv-summary">Ver más sobre diseño y producción multimedia</summary>
+                                <div class="disclosure-content">
+                                    <ul class="achievement-list mb-0">
+                                        <li>Producción visual para eventos conmemorativos, ferias de salud y rendición de cuentas municipales.</li>
+                                        <li>Optimización de piezas gráficas para máximo alcance e interacción en Instagram y Facebook oficiales.</li>
+                                    </ul>
+                                </div>
+                            </details>
 
+                            <div class="tech-pills-wrap">
+                                <span class="tech-pill">Adobe Photoshop</span>
+                                <span class="tech-pill">Diseño Publicitario</span>
+                                <span class="tech-pill">Comunicación Institucional</span>
+                                <span class="tech-pill">Salud Pública</span>
+                                <span class="tech-pill">Retoque Digital</span>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- Educación y Formación Académica -->
+                    <section class="mb-5" aria-labelledby="education-heading">
+                        <h2 id="education-heading" class="section-main-heading">
+                            <span class="section-icon-badge" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+                            Educación & Formación
+                        </h2>
+
+                        <!-- Educación 1: SENA Sistemas -->
+                        <article class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-role-title">
+                                    <i class="fa-solid fa-award text-primary" aria-hidden="true"></i>
+                                    Técnico en Sistemas
+                                </h3>
+                                <span class="timeline-date-badge">Titulación en 2021</span>
+                            </div>
+                            <div class="timeline-company-title">
+                                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                <span>SENA Regional Caldas</span>
+                            </div>
+                            <p class="timeline-description">
+                                Formación técnica integral con énfasis en mantenimiento de equipos de cómputo, instalación
+                                de redes de datos cableadas e inalámbricas, configuración de servidores de red, diagnóstico
+                                de fallas y soporte a usuarios.
+                            </p>
+                            <div class="tech-pills-wrap">
+                                <span class="tech-pill">Ensamble y Mantenimiento</span>
+                                <span class="tech-pill">Cableado Estructurado</span>
+                                <span class="tech-pill">Sistemas Operativos</span>
+                                <span class="tech-pill">Bases de Datos</span>
+                            </div>
+                        </article>
+
+                        <!-- Educación 2: SENA Programación -->
+                        <article class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-role-title">
+                                    <i class="fa-solid fa-code text-primary" aria-hidden="true"></i>
+                                    Técnico en Programación de Software
+                                </h3>
+                                <span class="timeline-date-badge">Titulación en 2016</span>
+                            </div>
+                            <div class="timeline-company-title">
+                                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                <span>SENA Regional Caldas</span>
+                            </div>
+                            <p class="timeline-description">
+                                Formación en fundamentos de ingeniería de software, lógica algorítmica, estructuración de
+                                bases de datos relacionales (SQL), maquetación frontend web (HTML/CSS/JS) y buenas
+                                prácticas en ciclo de vida del desarrollo.
+                            </p>
+                            <div class="tech-pills-wrap">
+                                <span class="tech-pill">Lógica de Programación</span>
+                                <span class="tech-pill">Desarrollo Web Frontend</span>
+                                <span class="tech-pill">SQL</span>
+                                <span class="tech-pill">Algoritmos</span>
+                            </div>
+                        </article>
+
+                        <!-- Educación 3: Roberto Peláez -->
+                        <article class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h3 class="timeline-role-title">
+                                    <i class="fa-solid fa-school text-primary" aria-hidden="true"></i>
+                                    Bachiller con Especialidad en Informática
+                                </h3>
+                                <span class="timeline-date-badge">Graduado en 2016</span>
+                            </div>
+                            <div class="timeline-company-title">
+                                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                                <a href="http://www.ie-robertopelaez-sed-cad.ie.edu.co/" target="_blank"
+                                    rel="noopener noreferrer" style="text-decoration: underline;">
+                                    I.E. Roberto Peláez (Aguadas, Caldas)
+                                </a>
+                            </div>
+                            <p class="timeline-description mb-0">
+                                Énfasis en herramientas ofimáticas avanzadas, introducción a la tecnología digital,
+                                ensamble informático y principios de desarrollo lógico.
+                            </p>
+                        </article>
+                    </section>
+
+                    <!-- Proyectos Destacados (Enfoque Desarrollador Web Junior) -->
+                    <section class="mb-4" aria-labelledby="projects-heading">
+                        <h2 id="projects-heading" class="section-main-heading">
+                            <span class="section-icon-badge" aria-hidden="true"><i class="fa-solid fa-code-branch"></i></span>
+                            Proyectos & Repositorios
+                        </h2>
+
+                        <div class="project-grid">
+                            <article class="project-card">
+                                <div>
+                                    <div class="project-card-header">
+                                        <h3 class="project-card-title">Hoja de Vida Web & Portafolio</h3>
+                                        <i class="fa-solid fa-laptop-code text-primary" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="project-card-desc">
+                                        Aplicación web responsiva y accesible para presentación profesional. Desarrollada con HTML5 semántico, CSS3 moderno (Custom Properties, Grid/Flexbox), JavaScript para interactividad (modo oscuro, copiado, impresión PDF) y maquetación con Bootstrap 5.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="tech-pills-wrap mb-2">
+                                        <span class="tech-pill">HTML5</span>
+                                        <span class="tech-pill">CSS3</span>
+                                        <span class="tech-pill">JavaScript ES6</span>
+                                        <span class="tech-pill">Bootstrap 5</span>
+                                        <span class="tech-pill">Git / GitHub</span>
+                                    </div>
+                                    <a class="project-link-action" href="https://github.com/Camilo-Ospina" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <span>Ver Código en GitHub</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <article class="project-card">
+                                <div>
+                                    <div class="project-card-header">
+                                        <h3 class="project-card-title">Prácticas de Frontend & JavaScript</h3>
+                                        <i class="fa-brands fa-github text-primary" aria-hidden="true"></i>
+                                    </div>
+                                    <p class="project-card-desc">
+                                        Colección de proyectos en GitHub enfocados en manipulación dinámica del DOM, maquetación mobile-first, consumo de datos y resolución algorítmica con buenas prácticas y control de versiones.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="tech-pills-wrap mb-2">
+                                        <span class="tech-pill">JavaScript</span>
+                                        <span class="tech-pill">DOM</span>
+                                        <span class="tech-pill">Responsive Web</span>
+                                        <span class="tech-pill">Git Flow</span>
+                                    </div>
+                                    <a class="project-link-action" href="https://github.com/Camilo-Ospina" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <span>Explorar Repositorios</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </article>
                         </div>
-                    </div>
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title fw-bold"><i class="fa-solid fa-screwdriver-wrench"></i> Técnico en Sistemas</h4>
-                            <h6 class="text-prymary"> Títulación en el año 2021</h6>
-                            <h5 class="text-primary"><i class="fa-solid fa-school"></i> SENA Regional Caldas</h5>
-                            <input type="checkbox" id="toggleCheckbox">
-                            <ul id="myList">
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                                <li>Liderazgo de equipo de desarrollo</li>
-                                <li>Implementación de arquitectura SAS</li>
-                                <li>Optimización de rendimiento</li>
-                            </ul>
+                    </section>
 
-                            <label for="toggleCheckbox" class="toggle-label"></label>
-
+                    <!-- Referencias y Disponibilidad -->
+                    <section class="p-3 rounded-3 border" style="background-color: var(--bg-surface-secondary); border-color: var(--border-color) !important;">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-certificate text-primary fs-3" aria-hidden="true"></i>
+                            <div>
+                                <h4 class="h6 fw-bold mb-1">Certificaciones y Referencias Laborales</h4>
+                                <p class="small text-secondary mb-0">
+                                    Constancias laborales, títulos académicos SENA y referencias personales y profesionales disponibles de inmediato previa solicitud.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </section>
 
                 </section>
-
             </div>
         </div>
-    </div>
-    <br>
-    <hr>
-    <p>MI HOJA DE VIDA</p>
 
-    <!-- Bootstrap JS -->
+        <!-- Pie de Página -->
+        <footer class="cv-footer no-print">
+            <p class="mb-1">
+                Hoja de Vida de <strong>Juan Camilo Cardona Ospina</strong> &bull; Desarrollador Web Junior &bull; Técnico en Sistemas
+            </p>
+            <p class="small text-muted mb-0">
+                &copy; <span id="currentYear">2026</span> &bull; HTML5, CSS3, Bootstrap 5 y JavaScript &bull; Aguadas, Caldas, Colombia
+            </p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Personalizado -->
+    <script src="main.js"></script>
 
 </body>
 

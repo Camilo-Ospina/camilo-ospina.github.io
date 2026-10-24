@@ -1,37 +1,1074 @@
-* {
-    font-family: 'Montserrat', sans-serif;
+/* ==========================================================================
+   HOJA DE VIDA - ESTILOS PROFESIONALES Y MODERNOS
+   Desarrollador Web & Técnico en Sistemas - Juan Camilo Cardona Ospina
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES DE DISEÑO (CSS Custom Properties) & TEMAS
+   -------------------------------------------------------------------------- */
+:root {
+    /* Paleta Principal - Tema Claro */
+    --color-primary: #0f2838;
+    --color-primary-rgb: 15, 40, 56;
+    --color-primary-light: #1a425b;
+    --color-primary-dark: #0a1b26;
+    
+    --color-accent: #2563eb;
+    --color-accent-hover: #1d4ed8;
+    --color-accent-soft: #eff6ff;
+    --color-accent-border: #bfdbfe;
+
+    --color-success: #10b981;
+    --color-whatsapp: #25d366;
+    --color-whatsapp-hover: #20ba5a;
+
+    --bg-page: #f1f5f9;
+    --bg-surface: #ffffff;
+    --bg-surface-secondary: #f8fafc;
+    --bg-sidebar: linear-gradient(180deg, #0c202d 0%, #0f2838 40%, #16364c 100%);
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-on-dark: #ffffff;
+    --text-on-dark-muted: #cbd5e1;
+
+    --border-color: #e2e8f0;
+    --border-color-subtle: #f1f5f9;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 25px -3px rgba(15, 40, 56, 0.12), 0 4px 6px -4px rgba(15, 40, 56, 0.08);
+    --shadow-card-hover: 0 14px 28px -4px rgba(15, 40, 56, 0.14), 0 6px 12px -2px rgba(15, 40, 56, 0.08);
+
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+    --radius-full: 9999px;
+
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ajustes de color para columna izquierda */
-.bg-prymary {
-    background-color: #0f2838 !important;
+/* Tema Oscuro */
+[data-theme="dark"] {
+    --bg-page: #0b1117;
+    --bg-surface: #131c24;
+    --bg-surface-secondary: #17222c;
+    --bg-sidebar: linear-gradient(180deg, #070d13 0%, #0c1822 50%, #10202d 100%);
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --border-color: #1e2d3b;
+    --border-color-subtle: #172430;
+
+    --color-accent-soft: rgba(37, 99, 235, 0.15);
+    --color-accent-border: rgba(37, 99, 235, 0.35);
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.6);
+    --shadow-card-hover: 0 16px 32px -4px rgba(0, 0, 0, 0.7);
 }
 
-/* Progreso personalizado */
-.progress {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+/* --------------------------------------------------------------------------
+   2. REGLAS BASE & TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+}
+
+body {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color var(--transition-slow), color var(--transition-slow);
+    min-height: 100vh;
+    padding-bottom: 2rem;
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   3. BARRA SUPERIOR DE ACCIONES (Descargar PDF, Modo Oscuro, WhatsApp)
+   -------------------------------------------------------------------------- */
+.top-action-bar {
+    max-width: 1200px;
+    margin: 1.5rem auto 1rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.status-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+    70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.actions-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-custom:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-surface-secondary);
+    color: var(--color-accent);
+}
+
+.btn-custom-primary {
+    background-color: var(--color-accent);
+    color: #ffffff !important;
+    border-color: var(--color-accent);
+}
+
+.btn-custom-primary:hover {
+    background-color: var(--color-accent-hover);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.btn-custom-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: #ffffff !important;
+    border-color: var(--color-whatsapp);
+}
+
+.btn-custom-whatsapp:hover {
+    background-color: var(--color-whatsapp-hover);
+    color: #ffffff !important;
+}
+
+.theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   4. ESTRUCTURA PRINCIPAL DE LA HOJA DE VIDA
+   -------------------------------------------------------------------------- */
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.cv-card-frame {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-lg);
     overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    transition: background-color var(--transition-slow), border-color var(--transition-slow);
 }
 
-.text-primary {
-    color: #3498db !important;
+/* --------------------------------------------------------------------------
+   5. COLUMNA LATERAL (Sidebar)
+   -------------------------------------------------------------------------- */
+.cv-sidebar {
+    background: var(--bg-sidebar);
+    color: var(--text-on-dark);
+    padding: 2.5rem 2rem;
+    position: relative;
 }
-/* efectos para las tarjetas */
-.card {
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    transition-duration: 500ms;
-    transition-property: background-color, color;
+
+.profile-avatar-wrap {
+    position: relative;
+    width: 156px;
+    height: 156px;
+    margin: 0 auto 1.5rem;
 }
-.card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    background-color: #0f2838;
-    color: #fff
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    background-color: #ffffff;
+    display: block;
 }
-.linkwhats:hover{
-    color:greenyellow !important;
+
+.profile-avatar-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-success);
+    border: 3px solid #0f2838;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-a:hover{
-    color:#3498db !important;
+
+.sidebar-title-name {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.sidebar-role-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: #93c5fd;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.9rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-bio-text {
+    font-size: 0.875rem;
+    color: var(--text-on-dark-muted);
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+}
+
+.sidebar-section-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 1.75rem 0;
+}
+
+.sidebar-section-heading {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.15rem;
+}
+
+/* Contacto en Sidebar */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.85rem;
+    font-size: 0.875rem;
+    gap: 0.75rem;
+}
+
+.contact-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #93c5fd;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.contact-link {
+    color: #ffffff;
+    word-break: break-word;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.contact-link:hover {
+    color: #93c5fd;
+}
+
+.contact-link.whatsapp-link:hover {
+    color: #4ade80;
+}
+
+.contact-item:hover .contact-icon-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.copy-mini-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    margin-left: auto;
+}
+
+.copy-mini-btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Habilidades en Sidebar: Categorías y Badges (Sin porcentajes) */
+.skills-category-group {
+    margin-bottom: 1.25rem;
+}
+
+.skills-category-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #93c5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.skills-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skill-tag-pill {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #f1f5f9;
+    font-size: 0.775rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all var(--transition-fast);
+}
+
+.skill-tag-pill:hover {
+    background-color: rgba(37, 99, 235, 0.35);
+    border-color: #60a5fa;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.skill-tag-pill.featured-tech {
+    background-color: rgba(37, 99, 235, 0.25);
+    border-color: rgba(96, 165, 250, 0.5);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Badges / Chips en Sidebar */
+.badges-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.badge-tag-sidebar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    font-size: 0.775rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.badge-tag-sidebar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   6. COLUMNA PRINCIPAL DE CONTENIDO
+   -------------------------------------------------------------------------- */
+.cv-main-body {
+    padding: 2.75rem 2.5rem;
+    background-color: var(--bg-surface);
+    transition: background-color var(--transition-slow);
+}
+
+/* Títulos de sección */
+.section-main-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
+
+[data-theme="dark"] .section-main-heading {
+    color: #93c5fd;
+}
+
+.section-main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+.section-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Tarjetas de Experiencia & Educación */
+.timeline-card {
+    background-color: var(--bg-surface-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: 1.4rem;
+    margin-bottom: 1.25rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-accent-border);
+}
+
+.timeline-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-role-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent-border);
+    font-size: 0.775rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+}
+
+.timeline-company-title {
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.timeline-description {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.55;
+}
+
+/* Lista de responsabilidades / logros */
+.achievement-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.75rem 0 1rem;
+}
+
+.achievement-list li {
+    position: relative;
+    padding-left: 1.35rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.achievement-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0.25rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Badges de tecnología en tarjetas */
+.tech-pills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.tech-pill {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.tech-pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. DETALLES EXPANDIBLES ACCESIBLES (Modern <details> & <summary>)
+   -------------------------------------------------------------------------- */
+details.cv-disclosure {
+    margin-top: 0.75rem;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 0.65rem;
+}
+
+details.cv-disclosure summary.cv-summary {
+    cursor: pointer;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    user-select: none;
+    list-style: none;
+    transition: color var(--transition-fast);
+}
+
+details.cv-disclosure summary.cv-summary::-webkit-details-marker {
+    display: none;
+}
+
+details.cv-disclosure summary.cv-summary:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+details.cv-disclosure summary.cv-summary::after {
+    content: '▼';
+    font-size: 0.65rem;
+    transition: transform var(--transition-normal);
+}
+
+details.cv-disclosure[open] summary.cv-summary::after {
+    transform: rotate(180deg);
+}
+
+.disclosure-content {
+    margin-top: 0.6rem;
+    padding: 0.75rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   8. PROYECTOS DESTACADOS
+   -------------------------------------------------------------------------- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-surface-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent-border);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.project-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.project-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.85rem;
+    flex-grow: 1;
+}
+
+.project-link-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.project-link-action:hover {
+    color: var(--color-accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   9. FOOTER
+   -------------------------------------------------------------------------- */
+.cv-footer {
+    text-align: center;
+    padding: 2rem 1rem 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.cv-footer a {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   10. TOAST NOTIFICACIÓN FLOTANTE (Copiado al portapapeles)
+   -------------------------------------------------------------------------- */
+.cv-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.cv-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVIDAD (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .cv-sidebar {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .copy-mini-btn {
+        margin-left: 0;
+    }
+
+    .sidebar-section-heading {
+        justify-content: center;
+    }
+
+    .badges-cloud {
+        justify-content: center;
+    }
+
+    .cv-main-body {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .top-action-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions-group {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .status-pill {
+        justify-content: center;
+    }
+
+    .btn-custom {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .timeline-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   12. ESTILOS DE IMPRESIÓN / EXPORTACIÓN PDF (@media print)
+   Optimizado para 1-2 páginas nítidas, legibles y que no gasten tinta innecesaria
+   -------------------------------------------------------------------------- */
+@media print {
+    @page {
+        margin: 10mm 12mm;
+        size: letter portrait;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 9.5pt;
+        line-height: 1.4;
+    }
+
+    .top-action-bar,
+    .copy-mini-btn,
+    .cv-footer,
+    .cv-toast,
+    .theme-toggle-btn,
+    .no-print {
+        display: none !important;
+    }
+
+    .cv-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .cv-card-frame {
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
+    .row {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    .col-lg-4, .col-md-5 {
+        width: 32% !important;
+        float: left !important;
+    }
+
+    .col-lg-8, .col-md-7 {
+        width: 68% !important;
+        float: left !important;
+    }
+
+    .cv-sidebar {
+        background: #f8fafc !important;
+        color: #1e293b !important;
+        border-right: 1px solid #cbd5e1 !important;
+        padding: 1rem !important;
+    }
+
+    .profile-avatar-wrap {
+        width: 110px !important;
+        height: 110px !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .profile-avatar-wrap::after {
+        display: none !important;
+    }
+
+    .profile-avatar {
+        border-color: #0f2838 !important;
+    }
+
+    .sidebar-title-name {
+        color: #0f2838 !important;
+        font-size: 1.25rem !important;
+    }
+
+    .sidebar-role-badge {
+        background-color: #e2e8f0 !important;
+        color: #0f2838 !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+
+    .sidebar-bio-text {
+        color: #475569 !important;
+        font-size: 8pt !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .sidebar-section-divider {
+        border-color: #e2e8f0 !important;
+        margin: 0.85rem 0 !important;
+    }
+
+    .sidebar-section-heading {
+        color: #0f2838 !important;
+        font-size: 8.5pt !important;
+        margin-bottom: 0.6rem !important;
+    }
+
+    .contact-item {
+        font-size: 8.5pt !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .contact-link {
+        color: #1e293b !important;
+    }
+
+    .contact-icon-box {
+        background-color: #e2e8f0 !important;
+        color: #0f2838 !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 8pt !important;
+    }
+
+    .skill-tag-pill {
+        background-color: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #0f2838 !important;
+        font-size: 7.5pt !important;
+        padding: 2px 6px !important;
+    }
+
+    .skills-category-title {
+        color: #0f2838 !important;
+        font-size: 8pt !important;
+        margin-bottom: 0.35rem !important;
+    }
+
+    .badge-tag-sidebar {
+        background-color: #f1f5f9 !important;
+        color: #0f2838 !important;
+        border: 1px solid #cbd5e1 !important;
+        font-size: 7.5pt !important;
+        padding: 2px 6px !important;
+    }
+
+    .cv-main-body {
+        padding: 1rem 1.25rem !important;
+        background-color: #ffffff !important;
+    }
+
+    .section-main-heading {
+        color: #0f2838 !important;
+        font-size: 1.15rem !important;
+        margin-bottom: 0.85rem !important;
+        padding-bottom: 0.35rem !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+        page-break-after: avoid;
+    }
+
+    .section-main-heading::after {
+        background: #0f2838 !important;
+    }
+
+    .timeline-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 3px solid #0f2838 !important;
+        box-shadow: none !important;
+        padding: 0.75rem !important;
+        margin-bottom: 0.85rem !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .timeline-role-title {
+        font-size: 10pt !important;
+        color: #0f2838 !important;
+    }
+
+    .timeline-company-title {
+        font-size: 8.5pt !important;
+        color: #2563eb !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .timeline-date-badge {
+        background-color: #f1f5f9 !important;
+        color: #0f2838 !important;
+        border-color: #cbd5e1 !important;
+        font-size: 7.5pt !important;
+    }
+
+    .achievement-list li {
+        font-size: 8.5pt !important;
+        margin-bottom: 0.25rem !important;
+        color: #1e293b !important;
+    }
+
+    .tech-pill {
+        border-color: #cbd5e1 !important;
+        background-color: #f8fafc !important;
+        color: #334155 !important;
+        font-size: 7.5pt !important;
+        padding: 1px 5px !important;
+    }
+
+    /* En impresión, desplegar todos los detalles automáticamente */
+    details.cv-disclosure {
+        display: block !important;
+        border-top: none !important;
+        padding-top: 0 !important;
+    }
+
+    details.cv-disclosure summary.cv-summary {
+        display: none !important;
+    }
+
+    .disclosure-content {
+        display: block !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-top: 0.25rem !important;
+        background: transparent !important;
+    }
+
+    .project-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        padding: 0.75rem !important;
+    }
 }
